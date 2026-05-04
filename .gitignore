@@ -54,5 +54,4 @@ dkms.conf
 build
 vcpkg_installed
 cmake-build-debug-wsl
-.codecrafters
 .idea
