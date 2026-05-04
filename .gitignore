@@ -56,3 +56,4 @@ vcpkg_installed
 cmake-build-debug-wsl
 codecrafters.yml
 .codecrafters
+.idea

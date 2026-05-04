@@ -1,5 +1,7 @@
 # Gulde Shell in C
 
+![CI](https://github.com/fgulde/gulde-shell/actions/workflows/ci.yml/badge.svg)
+
 **Gulde Shell** (_GShell_) is a private systems-programming learning project focused on building a shell from scratch in modern C.
 
 ## Goal
