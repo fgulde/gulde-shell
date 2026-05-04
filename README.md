@@ -1,34 +1,49 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/2146a23d-7f47-4037-8c4f-1c97cf07b1a9)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+# Gulde Shell in C
 
-This is a starting point for C solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+**Gulde Shell** (_GShell_) is a private systems-programming learning project focused on building a shell from scratch in modern C.
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+## Goal
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+This project exists to deepen practical systems-level C skills by implementing a shell and exploring low-level software concepts such as process handling, command execution, parsing, and interactive terminal behavior.
 
-# Passing the first stage
+## Current Status
 
-The entry point for your `shell` implementation is in `src/main.c`. Study and
-uncomment the relevant code, then run the command below to execute the tests on
-our servers:
+Already implemented:
+_TBD_
 
-```sh
-codecrafters submit
+Planned:
+- Interactive REPL loop with prompt rendering and input handling.
+- Command parser (tokenization, quoting/escaping, argument handling).
+- Builtin commands (e.g., `cd`, `pwd`, `echo`, `exit`, `type`).
+- External command execution with `fork`/`exec` and proper exit status propagation.
+- Environment variable expansion, redirections, and piping.
+- Improved test coverage for parser, builtins, and process execution paths.
+
+## Tech Stack
+
+- **Language:** C23
+- **Build system:** CMake
+- **Dependency management:** vcpkg (manifest mode)
+- **Line editing:** readline
+- **Testing:** cmocka
+
+## Building
+Use the provided script:
+```bash
+./program.sh
 ```
 
-Time to move on to the next stage!
+## Testing
+To build and run tests:
+```bash
+./run_tests.sh
+```
 
-# Stage 2 & beyond
+## Architecture
 
-Note: This section is for stages 2 and beyond.
+_TBD — this section will be documented as the module boundaries and execution flow stabilize._
 
-1. Ensure you have `cmake` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main.c`.
-1. Run `codecrafters submit` to submit your solution to CodeCrafters. Test
-   output will be streamed to your terminal.
+## Project Structure
+
+_TBD_
+

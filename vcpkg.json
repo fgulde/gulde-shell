@@ -1,3 +1,8 @@
 {
-  "dependencies": []
+  "name": "gulde-shell",
+  "version":  "0.1.0",
+  "dependencies": [
+    "readline",
+    "cmocka"
+  ]
 }
