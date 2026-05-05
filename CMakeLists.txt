@@ -29,6 +29,8 @@ find_package(cmocka CONFIG REQUIRED)
 file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS src/*.c src/*.h)
 file(GLOB_RECURSE TEST_FILES CONFIGURE_DEPENDS tests/*.c)
 
+list(REMOVE_ITEM SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
+
 # ==============================================================================
 # 4. CORE LIBRARY (shell_lib)
 # Contains all business logic, reusable by both the main app and tests.
@@ -48,7 +50,7 @@ if(ENABLE_SANITIZERS AND CMAKE_C_COMPILER_ID MATCHES "Clang|GNU")
             $<$<CONFIG:Debug>:-fno-omit-frame-pointer>
             $<$<CONFIG:Debug>:-g>
     )
-    target_link_options(shell_lib PRIVATE
+    target_link_options(shell_lib PUBLIC
             $<$<CONFIG:Debug>:-fsanitize=${SANITIZERS}>
     )
 endif()
