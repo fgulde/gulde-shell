@@ -1,6 +1,17 @@
 #include "command_registry.h"
 
 #include <string.h>
+#include <stdlib.h>
+
+static int command_exit(const size_t argc, char* argv[], const FILE* output_stream) {
+  (void)output_stream;
+  int exit_code = 0;
+  if (argc > 1) {
+    constexpr int DECIMAL_BASE = 10;
+    exit_code = (int)strtol(argv[1], nullptr, DECIMAL_BASE);
+  }
+  _Exit(exit_code);
+}
 
 static int command_echo(const size_t argc, char* argv[], FILE* output_stream) {
   for (size_t i = 1; i < argc; i++) {
@@ -22,6 +33,7 @@ static int command_echo(const size_t argc, char* argv[], FILE* output_stream) {
 
 static const Command COMMANDS[] = {
     {.name = "echo", .handler = command_echo},
+    {.name = "exit", .handler = (CommandHandler)command_exit},
 };
 
 const Command* find_command(const char* command_name) {
