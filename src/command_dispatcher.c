@@ -9,6 +9,8 @@ int dispatch_command(const size_t argc, char* argv[], FILE* output_stream) {
   }
 
   const Command* command = find_command(argv[0]);
+
+  // If the command is not found, print an error message to the output stream
   if (command == NULL) {
     if (fputs(argv[0], output_stream) == EOF) {
       return 1;

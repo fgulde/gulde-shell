@@ -7,7 +7,7 @@
 
 int shell_execute_input(char* input, FILE* output_stream) {
   constexpr size_t MAX_ARGUMENTS = 64;
-  char* argv[MAX_ARGUMENTS];
+  char* argv[MAX_ARGUMENTS]; // Array to hold pointers to the arguments
 
   const size_t argc = parse_input(input, argv, MAX_ARGUMENTS);
 
